@@ -946,10 +946,6 @@ public void OnEntityCreated(int iEntIndex, const char[] szClassname)
 			{
 				if (CoopManager.IsCoopModeEnabled())
 				{
-					//allow instancing only for map placed syringe to avoid issues with scientist's syringe
-					if (strcmp(szClassname, "item_syringe", false) == 0 && pEntity.GetHammerID() == 0)
-						return;
-					
 					SDKHook(iEntIndex, SDKHook_Spawn, Hook_Item_OnSpawn);
 					
 					#if defined ENTPATCH_BM_BATTERY_DLIGHT
