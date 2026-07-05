@@ -974,6 +974,7 @@
 				"return"	"void"
 				"this"		"entity"
 			}
+
 			"CLagCompensationManager::StartLagCompensation"	//void CLagCompensationManager::StartLagCompensation( CBasePlayer *player, LagCompensationType lagCompensationType, const Vector& weaponPos, const QAngle &weaponAngles, float weaponRange )
 			{
 				"signature"		"CLagCompensationManager::StartLagCompensation"
