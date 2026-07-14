@@ -325,7 +325,9 @@ public MRESReturn Hook_SnarkIsValidEnemy(int _this, DHookReturn hReturn, DHookPa
         return MRES_Ignored;
 
     //Does it targets my owner ? 
-    bool bMyOwnerIsTargetEnemy = (HasEntProp(pEnemy.entindex, Prop_Data, "m_hEnemy")) ? (pEnemy.GetEnemy() == pOwner) : false;
+    bool bMyOwnerIsTargetEnemy = false;
+	if (!pEnemy.IsPlayer())
+		bMyOwnerIsTargetEnemy = (pEnemy.GetEnemy() == pOwner);
     
 	//is ally that doesn't target my owner ?
     if (pEnemy.IsPlayerAlly(pPlayer) && !bMyOwnerIsTargetEnemy)
